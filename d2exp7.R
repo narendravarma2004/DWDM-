@@ -1,0 +1,6 @@
+library(MASS)
+data(water)
+plot(water$hardness, water$mortality, main="Scatter plot of Mortality vs. Hardness", xlab="Hardness", ylab="Mortality")
+model <- lm(mortality ~ hardness, data = water)
+new_data <- data.frame(hardness = 88)
+predicted_mortality <- predict(model, newdata = new_data)
